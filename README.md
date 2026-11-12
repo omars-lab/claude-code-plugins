@@ -3,7 +3,8 @@
 Claude Code plugins I have shared. Each one is checked for secrets and private details before it
 goes up here.
 
-Add this marketplace once, in Claude Code:
+Add this marketplace once, in Claude Code. It is listed as `omars-lab`, the name you install
+from:
 
 ```
 /plugin marketplace add omars-lab/claude-code-plugins
@@ -11,7 +12,7 @@ Add this marketplace once, in Claude Code:
 
 | Plugin | What it does | Install |
 |---|---|---|
-| [loop-manager](plugins/loop-manager/) | A development loop where a command you wrote, not an agent, decides when the work is done | `/plugin install loop-manager@claude-code-plugins` |
+| [loop-manager](plugins/loop-manager/) | A development loop where a command you wrote, not an agent, decides when the work is done | `/plugin install loop-manager@omars-lab` |
 
 ## loop-manager
 
