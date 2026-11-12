@@ -1,0 +1,6 @@
+{
+  "name": "devloop-sample",
+  "private": true,
+  "type": "module",
+  "description": "A tiny repo to try the development loop on"
+}

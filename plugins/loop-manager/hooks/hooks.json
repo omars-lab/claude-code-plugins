@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/hooks/devloop_check.py\"",
+            "timeout": 600
+          }
+        ]
+      }
+    ]
+  }
+}

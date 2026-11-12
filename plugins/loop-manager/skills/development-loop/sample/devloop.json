@@ -1,0 +1,7 @@
+{
+  "check": "make verify",
+  "protect": ["test/", "Makefile", "package.json"],
+  "max_rounds": 6,
+  "check_timeout": 120,
+  "pr": false
+}
