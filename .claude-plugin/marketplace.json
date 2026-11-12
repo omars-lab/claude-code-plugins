@@ -12,7 +12,7 @@
       "name": "loop-manager",
       "source": "./plugins/loop-manager",
       "description": "Runs an issue through a development loop of agents to a pull request: a critic writes a checkable goal, a builder works until a SubagentStop hook running the repo's own check (devloop.json) says done, three reviewers read the commit once, a person reviews, and an optimizer proposes one piece of guidance at the lowest rung that would have prevented the miss (a tip, a goal rule, a CLAUDE.md tenet, a skill step, or the check). Once, or paced by /loop.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "development",
       "keywords": ["agents", "loop", "subagent-stop", "hooks", "code-review", "goal"]
     }

@@ -1,7 +1,7 @@
 {
   "name": "loop-manager",
   "description": "Runs a development loop with Claude Code agents: a critic turns an issue into a goal with a check a person wrote, a builder works until a hook running that check says it is met, three reviewers read the commit once, a person reviews the pull request, and an optimizer proposes one piece of guidance at the lowest rung that would have prevented the miss: a tip, a goal rule, a CLAUDE.md tenet, a skill step, or the check. Works once or paced by /loop.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Omar Eid"
   },

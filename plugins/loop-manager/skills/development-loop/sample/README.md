@@ -7,18 +7,35 @@ say.
 
 ## Try it
 
+Copy the sample out of the repo and give it a first commit. It needs git, make and Node 18 or
+newer, and nothing to install:
+
 ```sh
-cp -R "$(dirname <this file>)" ~/devloop-sample && cd ~/devloop-sample
+git clone https://github.com/omars-lab/claude-code-plugins
+cp -R claude-code-plugins/plugins/loop-manager/skills/development-loop/sample devloop-sample
+cd devloop-sample
 mv gitignore .gitignore
 git init -q && git add . && git commit -qm "sample start"
-make verify            # fails: the issue isn't fixed yet
+# fails 8 of its 10 tests: the issue isn't fixed yet
+make verify
 claude
-> /loop-manager:development-loop "$(cat ISSUE.md)"
 ```
 
-The loop makes its working copy at `~/devloop-sample-devloop`, on a `devloop/<run>` branch. With
-`"pr": false` in `devloop.json` it prints the branch at the end instead of opening a pull request.
-`.devloop/<run>/` holds the goal, the log and the findings; `loop_report.py` turns them into numbers.
+Then, in Claude Code:
+
+```text
+/loop-manager:development-loop the issue in ISSUE.md
+```
+
+The loop works in its own copy next to the sample, at `devloop-sample-devloop`, and commits to a
+`devloop/<run>` branch that the sample can see too. With `"pr": false` in `devloop.json` it prints
+the branch at the end instead of opening a pull request. `.devloop/<run>/` holds the goal, the log
+and the findings; `loop_report.py` turns them into numbers. To see the result:
+
+```sh
+git switch devloop/<run>
+make verify     # all 10 pass
+```
 
 Files:
 
