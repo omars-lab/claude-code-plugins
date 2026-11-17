@@ -13,6 +13,7 @@ from:
 | Plugin | What it does | Install |
 |---|---|---|
 | [loop-manager](plugins/loop-manager/) | A development loop where a command you wrote, not an agent, decides when the work is done | `/plugin install loop-manager@omars-lab` |
+| [session-manager](plugins/session-manager/) | One Claude Code session manages the others on a goal: priorities, approvals in one place, a status every ten minutes | `/plugin install session-manager@omars-lab` |
 
 ## loop-manager
 
@@ -50,6 +51,24 @@ To try it first, the plugin ships a tiny sample repo with an issue, locked tests
 
 The full steps are in `plugins/loop-manager/skills/development-loop/SKILL.md`. The hook's own
 tests: `python3 plugins/loop-manager/hooks/devloop_check.py --selftest`.
+
+## session-manager
+
+When several Claude Code sessions work on one goal (an incident, a launch, a release), you end up
+switching tabs to learn what each is doing and answering the same kind of approval in every tab.
+This plugin makes one session the manager of the others:
+
+- It finds the sessions on the goal and asks each for its folder, branch and task list.
+- It ranks the tasks by how much they move the goal, and tells each session what to do next.
+- It keeps two sessions off the same task and out of the same folder.
+- Every approval comes to the manager, which asks you once and writes your answer down before
+  passing it on.
+- Every ten minutes it asks each session for a status and gives you one short summary: what
+  moved, what's stuck, what needs you.
+
+To use it, run `/session-manager:manage-sessions` in the session you want as the manager. It needs
+the ListAgents and SendMessage tools, which reach the other sessions on the same machine. The
+steps are in `plugins/session-manager/skills/manage-sessions/SKILL.md`.
 
 ## License
 

@@ -15,6 +15,14 @@
       "version": "0.1.1",
       "category": "development",
       "keywords": ["agents", "loop", "subagent-stop", "hooks", "code-review", "goal"]
+    },
+    {
+      "name": "session-manager",
+      "source": "./plugins/session-manager",
+      "description": "Make one Claude Code session the manager of the other sessions working on the same goal: find them, collect their task lists, set priorities, keep two off the same task, suggest new sessions and handoffs, route every approval through one place, and check in on a timer with a short summary",
+      "version": "1.4.3",
+      "category": "development",
+      "keywords": ["sessions", "cross-session-messaging", "coordination", "incident", "approvals", "status-updates"]
     }
   ]
 }
